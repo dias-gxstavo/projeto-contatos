@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Listar Contatos</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/adicionar-contato">
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Listar Contatos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item *ngFor="let user of users">
+      <h2>{{ user.name }}</h2>
+      <p>{{ user.email }}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button routerLink="/adicionar-contato">
+      Criar contato
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

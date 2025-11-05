@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Adicionar Contato</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <form #contatoForm="ngForm" (ngSubmit)="salvarContato()">
+
+        <ion-item>
+          <ion-label position="floating">Nome *</ion-label>
+          <ion-input
+            type="text"
+            [(ngModel)]="contato.nome"
+            name="nome"
+            required>
+          </ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input
+            type="email"
+            [(ngModel)]="contato.email"
+            name="email">
+          </ion-input>
+        </ion-item>
+
+        <ion-button
+          expand="block"
+          type="submit"
+          color="success"
+          [disabled]="!contatoForm.valid || salvando">
+          <ion-icon name="save-outline" slot="start"></ion-icon>
+          {{ salvando ? 'Salvando...' : 'Salvar Contato' }}
+        </ion-button>
+
+        <ion-button
+          expand="block"
+          type="button"
+          color="light"
+          (click)="limparFormulario()"
+          [disabled]="salvando">
+          <ion-icon name="refresh-outline" slot="start"></ion-icon>
+          Limpar
+        </ion-button>
+
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
