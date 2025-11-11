@@ -18,4 +18,8 @@ export const routes: Routes = [
     path: 'adicionar-contato',
     loadComponent: () => import('./adicionar-contato/adicionar-contato.page').then( m => m.AdicionarContatoPage)
   },
+  {
+    path: 'listar-contatos-firebase',
+    loadComponent: () => import('./listar-contatos-firebase/listar-contatos-firebase.page').then( m => m.ListarContatosFirebasePage)
+  },
 ];

@@ -83,19 +83,14 @@ export class AdicionarContatoPage implements OnInit {
     this.salvando = true;
 
     try {
-      // Adiciona data de criação
 
-      // Salva no Firebase
       await this.firebaseService.addDocument('contatos', this.contato);
 
-      // Mostra mensagem de sucesso
       await this.mostrarToast('Contato salvo com sucesso!', 'success');
 
-      // Limpa o formulário
       this.limparFormulario();
 
-      // Volta para a página anterior
-      this.router.navigate(['/home']);
+      this.router.navigate(['/listar-contatos-firebase']);
     } catch (error) {
       console.error('Erro ao salvar contato:', error);
       await this.mostrarAlerta('Erro', 'Não foi possível salvar o contato. Tente novamente.');

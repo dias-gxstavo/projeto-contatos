@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; // Importar o HttpClientModule
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonList, IonItem, IonButton, IonButtons, IonFab, IonFabButton } from '@ionic/angular/standalone';
 import { ApiService } from '../service/api.service';
+import { RouterLinkWithHref } from '@angular/router';
 
 @Component({
   selector: 'app-listar-contatos',
@@ -23,7 +24,8 @@ import { ApiService } from '../service/api.service';
     IonButtons,
     IonButton,
     IonFab,
-    IonFabButton
+    IonFabButton,
+    RouterLinkWithHref
   ]
 })
 export class ListarContatosPage implements OnInit {
